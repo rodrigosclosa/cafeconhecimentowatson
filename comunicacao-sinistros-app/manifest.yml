@@ -1,0 +1,15 @@
+---
+declared-services:
+  comunicacao-sinistros-conversation:
+    label: conversation
+    plan: free
+applications:
+- name: comunicacao-sinistros-chat
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - comunicacao-sinistros-conversation
+  env:
+    NPM_CONFIG_PRODUCTION: false
